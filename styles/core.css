@@ -1,0 +1,58 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #487c8e;
+}
+
+@media screen {
+  .wrapper {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+  
+    display: grid;
+  }
+}
+
+.content {
+  text-align: center;
+}
+.color-blue {
+  color: #487c8e;
+}
+.color-white {
+  color: #eaeaea;
+}
+.color-white::selection {
+  background-color: #eaeaea;
+  color: #487c8e;
+}
+.text {
+  display: block;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 32px;
+  line-height: 40px;
+}
+.font-robo {
+  font-family: 'Roboto Slab';
+}
+.text-underline {
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #d3d073;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
