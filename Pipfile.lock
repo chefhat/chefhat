@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ee9dd8d22a6330ea7ec6567d055dbe9820f65759cbee9cb6aa398ed575c1ab4c"
+            "sha256": "1473daefed021b5c9733190fe00d5507a5824c85721cc70f6bc5079575852c49"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -28,7 +28,23 @@
                 "sha256:275bec66fd2588dd517ada59b8bfb23d4a9abc5a362349139ddda3c7ff6f5ade",
                 "sha256:939652e9d34d7d53d74d5d8ef82a19e5f8bb2de75618f7e5360691b6e9667963"
             ],
+            "index": "pypi",
             "version": "==2.1.7"
+        },
+        "django-admin": {
+            "hashes": [
+                "sha256:2f507fc822b7af4191bf866b620c8a2d0e6e8641ee66ee32a73233b5eca4d04d",
+                "sha256:78182b41416b9d6ff469015d438911c64ce4ba210a2242da3c77e6de85c2d86b"
+            ],
+            "index": "pypi",
+            "version": "==1.3.2"
+        },
+        "django-excel-response2": {
+            "hashes": [
+                "sha256:0239654e95f375e8eab37a655171bd8c8a896b9b80afa41fd05abecd2d057873",
+                "sha256:a1abe97fb2773910d32ed0a222c20cd6ae8f241025a6b509a424a2b91defb7a2"
+            ],
+            "version": "==2.0.8"
         },
         "django-heroku": {
             "hashes": [
@@ -37,6 +53,13 @@
             ],
             "index": "pypi",
             "version": "==0.3.1"
+        },
+        "django-six": {
+            "hashes": [
+                "sha256:b05c96f5a7dbdcf9b513748df27421e8d63e586399bac80a928a29d97d78d450",
+                "sha256:d307483f3591fa3b471a3724659710229ea3127e112499f2b6f7fa7faa1e27e4"
+            ],
+            "version": "==1.0.4"
         },
         "gunicorn": {
             "hashes": [
@@ -124,12 +147,26 @@
             ],
             "version": "==2018.9"
         },
+        "screen": {
+            "hashes": [
+                "sha256:29009e0306d005679cc43c8cd69856a046265433310c10e71920591de3c58fda",
+                "sha256:aebfe90de7b8a646d4f3c2b214bd6ffa2ab12ed9d0b14c08620d9c7f7b8ee670"
+            ],
+            "version": "==1.0.1"
+        },
         "whitenoise": {
             "hashes": [
                 "sha256:118ab3e5f815d380171b100b05b76de2a07612f422368a201a9ffdeefb2251c1",
                 "sha256:42133ddd5229eeb6a0c9899496bdbe56c292394bf8666da77deeb27454c0456a"
             ],
             "version": "==4.1.2"
+        },
+        "xlwt": {
+            "hashes": [
+                "sha256:a082260524678ba48a297d922cc385f58278b8aa68741596a87de01a9c628b2e",
+                "sha256:c59912717a9b28f1a3c2a98fd60741014b06b043936dcecbc113eaaada156c88"
+            ],
+            "version": "==1.3.0"
         }
     },
     "develop": {}
