@@ -58,7 +58,7 @@ ROOT_URLCONF = 'chefhat.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['chefhat/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
