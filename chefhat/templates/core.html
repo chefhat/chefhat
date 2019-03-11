@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link id="css_core" href="{% static "styles/core.css" %}" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  <title>Chefhat{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="content">
+    {% include 'header.html' %}
+    <main class="main">
+      {% block body %}
+      {% endblock %}
+    </main>
+    {% include 'footer.html' %}
+  </div>
+</div>
+</body>
+
+</html>
