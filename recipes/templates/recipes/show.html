@@ -1,18 +1,39 @@
 {% extends 'core.html' %}
-{% block title %}- home{% endblock %}
+{% block title %} - {{ recipe.title }}{% endblock %}
 
 {% block body %}
 
 <h1>{{ recipe.title }}</h1>
 
 {% if recipe.forked_from %}
-  <h3>
-    forked from
-    <a href="/recipes/{{ recipe.forked_from.id }}">{{ recipe.forked_from.title }}</a>
-  </h3>
+<h3>
+  forked from
+  <a href="/recipes/{{ recipe.forked_from.id }}">{{ recipe.forked_from.title }}</a>
+</h3>
 {% endif %}
 
 <p>{{ recipe.description }}</p>
+
+{% if materials %}
+<h4>Materials:</h4>
+{% for material in materials %}
+<p>{{ material.quantity }} {{ material.name }}</p>
+{% endfor %}
+{% endif %}
+
+{% if ingredients %}
+<h4>Ingredients:</h4>
+{% for ingredient in ingredients %}
+<p>{{ ingredient.quantity }} {{ ingredient.type }} {{ ingredient.name }}</p>
+{% endfor %}
+{% endif %}
+
+{% if ingredients %}
+<h4>Steps:</h4>
+{% for step in steps %}
+<p>{{ step.description }}</p>
+{% endfor %}
+{% endif %}
 
 <a href="">Fork me</a>
 
