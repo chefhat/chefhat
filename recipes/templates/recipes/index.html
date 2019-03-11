@@ -1,0 +1,16 @@
+{% extends 'core.html' %}
+{% block title %}- home{% endblock %}
+
+{% block body %}
+
+<ul>
+  {% for recipe in recipes %}
+  <li>
+    <a href="/recipes/{{ recipe.id }}">
+      {{ recipe.title }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
