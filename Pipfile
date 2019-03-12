@@ -1,18 +1,17 @@
 [[source]]
-url = "https://pypi.python.org/simple"
-verify_ssl = true
 name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+autopep8 = "*"
+pylint = "*"
+
+[packages]
+dj_database_url = "*"
+django_heroku = "*"
+Django = "*"
+python_decouple = "*"
 
 [requires]
 python_version = "3.7"
-
-[packages]
-"psycopg2-binary" = "*"
-django-heroku = "*"
-gunicorn = "*"
-django = "*"
-django-admin = "*"
-python-decouple = "*"
-
-[dev-packages]
-pylint = "*"

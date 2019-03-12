@@ -30,7 +30,8 @@ class Material(models.Model):
 class Ingredient(models.Model):
     name = models.CharField(max_length=32)
     quantity = models.DecimalField(decimal_places=3, max_digits=6, blank=True)
-    type = models.CharField(max_length=32, choices=INGREDIENT_CHOICES, blank=True)
+    type = models.CharField(
+        max_length=32, choices=INGREDIENT_CHOICES, blank=True)
 
 
 class Step(models.Model):

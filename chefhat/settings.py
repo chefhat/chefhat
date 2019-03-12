@@ -30,8 +30,8 @@ except ImportError:
             default=config('DATABASE_URL')
         )
     }
-    ALLOWED_HOSTS = ['chefhat.org', 'www.chefhat.org', 'cooking.chefhat.org', 'chefhat-prod.heroku.app', 'chefhat-stag.heroku.app']
-
+    ALLOWED_HOSTS = ['chefhat.org', 'www.chefhat.org', 'cooking.chefhat.org',
+                     'chefhat-prod.heroku.app', 'chefhat-stag.heroku.app']
 
 
 # Application definition
@@ -75,6 +75,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'debug':DEBUG,
         },
     },
 ]
@@ -117,7 +118,8 @@ USE_L10N = True
 USE_TZ = True
 
 # Change 'default' database configuration with $DATABASE_URL.
-DATABASES['default'].update(dj_database_url.config(conn_max_age=500, ssl_require=True))
+DATABASES['default'].update(dj_database_url.config(
+    conn_max_age=500, ssl_require=True))
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -142,5 +144,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
-
-
