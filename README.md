@@ -1,5 +1,5 @@
-# chefhat
-### Chefhat.org | @Chefhat_app | A recipe app.
+# Chefhat
+### chefhat.org | @chefhatapp | A recipe app.
 
 ## INSTALLATION
 1. Install necessary packages.
