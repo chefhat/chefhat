@@ -3,5 +3,5 @@ venv
 staticfiles
 .env
 *.sqlite3
-.local_settings
+local_settings.py
 .vscode

@@ -17,14 +17,21 @@
 {% if materials %}
 <h4>Materials:</h4>
 {% for material in materials %}
-<p>{{ material.quantity }} {{ material.name }}</p>
+<p>
+  {% if material.quantity %}{{ material.quantity }} {% endif %}
+  {{ material.name }}
+</p>
 {% endfor %}
 {% endif %}
 
 {% if ingredients %}
 <h4>Ingredients:</h4>
 {% for ingredient in ingredients %}
-<p>{{ ingredient.quantity }} {{ ingredient.type }} {{ ingredient.name }}</p>
+<p>
+  {% if ingredient.quantity %}{{ ingredient.quantity }} {% endif %}
+  {% if ingredient.type %}{{ ingredient.type }} {% endif %}
+  {{ ingredient.name }}
+</p>
 {% endfor %}
 {% endif %}
 

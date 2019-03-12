@@ -24,13 +24,13 @@ INGREDIENT_CHOICES = list(set().union(
 
 class Material(models.Model):
     name = models.CharField(max_length=32)
-    quantity = models.DecimalField(decimal_places=3, max_digits=6)
+    quantity = models.DecimalField(decimal_places=3, max_digits=6, blank=True)
 
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=32)
-    quantity = models.DecimalField(decimal_places=3, max_digits=6)
-    type = models.CharField(max_length=32, choices=INGREDIENT_CHOICES)
+    quantity = models.DecimalField(decimal_places=3, max_digits=6, blank=True)
+    type = models.CharField(max_length=32, choices=INGREDIENT_CHOICES, blank=True)
 
 
 class Step(models.Model):
@@ -40,7 +40,7 @@ class Step(models.Model):
 
 class Recipe(models.Model):
     title = models.CharField(max_length=80)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     forked_from = models.ForeignKey(
         'self',
         default=None,
