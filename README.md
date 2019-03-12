@@ -46,7 +46,8 @@ fi
 ```
 4. Add the code above to your global bash process.
 ```sh
-$ echo ssh_helper.txt >> .bashrc
+$ echo -e "\n\n" >> .bashrc
+$ cat ssh_helper.txt >> .bashrc
 $ sudo rm -rf ssh_helper.txt
 ```
 5. Copy the SSH key to your clipboard.
