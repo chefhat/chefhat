@@ -3,21 +3,28 @@
 
 {% block body %}
 
-<h1>{{ recipe.title }}</h1>
+<p class="text text-lg font-robo color-white">
+  {{ recipe.title }}
+</p>
 
 {% if recipe.forked_from %}
-<h3>
+<div style="height: 20px;"></div>
+<p class="text text-sm font-robo color-white">
   forked from
-  <a href="/recipes/{{ recipe.forked_from.id }}">{{ recipe.forked_from.title }}</a>
-</h3>
+  <a class="text-underline color-white" href="/recipes/{{ recipe.forked_from.id }}">{{ recipe.forked_from.title }}</a>
+</p>
 {% endif %}
 
-<p>{{ recipe.description }}</p>
+<div style="height: 20px;"></div>
+<p class="text text-sm font-robo color-white">
+  {{ recipe.description }}
+</p>
 
 {% if materials %}
-<h4>Materials:</h4>
+<div style="height: 20px;"></div>
+<p class="text text-md font-robo color-white">Materials:</p>
 {% for material in materials %}
-<p>
+<p class="text text-sm font-robo color-white">
   {% if material.quantity %}{{ material.quantity }} {% endif %}
   {{ material.name }}
 </p>
@@ -25,9 +32,10 @@
 {% endif %}
 
 {% if ingredients %}
-<h4>Ingredients:</h4>
+<div style="height: 20px;"></div>
+<p class="text text-md font-robo color-white">Ingredients:</p>
 {% for ingredient in ingredients %}
-<p>
+<p class="text text-sm font-robo color-white">
   {% if ingredient.quantity %}{{ ingredient.quantity }} {% endif %}
   {% if ingredient.type %}{{ ingredient.type }} {% endif %}
   {{ ingredient.name }}
@@ -35,13 +43,19 @@
 {% endfor %}
 {% endif %}
 
-{% if ingredients %}
-<h4>Steps:</h4>
+{% if steps %}
+<div style="height: 20px;"></div>
+<p class="text text-md font-robo color-white">Steps:</p>
 {% for step in steps %}
-<p>{{ step.description }}</p>
+<p class="text text-sm font-robo color-white">
+  {{ step.description }}
+</p>
 {% endfor %}
 {% endif %}
 
-<a href="">Fork me</a>
+<div style="height: 20px;"></div>
+<p class="text text-sm font-robo color-white">
+  <a class="text-underline color-white" href="">Fork me</a>
+</p>
 
 {% endblock %}
