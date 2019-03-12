@@ -12,6 +12,7 @@ django-heroku = "*"
 gunicorn = "*"
 django = "*"
 django-admin = "*"
+python-decouple = "*"
 
 [dev-packages]
 pylint = "*"
