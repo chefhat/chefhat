@@ -2,15 +2,12 @@
 {% block title %} - Recipes{% endblock %}
 
 {% block body %}
+<div style="height: 30px;"></div>
 
-<ul>
-  {% for recipe in recipes %}
-  <li>
-    <a href="/recipes/{{ recipe.id }}">
-      {{ recipe.title }}
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+{% for recipe in recipes %}
+<p class="text text-md font-robo color-white">
+  <a class="text-underline color-white" href="/recipes/{{ recipe.id }}">{{ recipe.title }}</a>
+</p>
+{% endfor %}
 
 {% endblock %}
