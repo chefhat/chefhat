@@ -33,6 +33,7 @@ except ImportError:
     ALLOWED_HOSTS = ['chefhat.org', 'www.chefhat.org', 'cooking.chefhat.org', 'chefhat-prod.heroku.app', 'chefhat-stag.heroku.app']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -74,7 +75,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'debug': DEBUG,
         },
     },
 ]
@@ -142,3 +142,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+
