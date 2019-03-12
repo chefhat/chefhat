@@ -67,7 +67,7 @@ $ ^c //to end server
 $ exit //to leave pipenv
 ```
 
-# FURTHER CHANGES
+## FURTHER CHANGES
 1. Go into chefhat.
 ```sh
 $ cd chefhat
