@@ -2,61 +2,62 @@
 {% block title %} - {{ recipe.title }}{% endblock %}
 
 {% block body %}
-<div style="height: 30px;"></div>
+<div class="recipe-card">
+  <p class="text text-lg font-robo color-black">
+    {{ recipe.title }}
+  </p>
 
-<p class="text text-lg font-robo color-white">
-  {{ recipe.title }}
-</p>
+  {% if recipe.forked_from %}
+  <div style="height: 10px;"></div>
+  <p class="text text-sm font-robo color-gray">
+    forked from
+    <a class="text-underline color-gray" href="/recipes/{{ recipe.forked_from.id }}">{{ recipe.forked_from.title }}</a>
+  </p>
+  {% endif %}
 
-{% if recipe.forked_from %}
-<div style="height: 20px;"></div>
-<p class="text text-sm font-robo color-white">
-  forked from
-  <a class="text-underline color-white" href="/recipes/{{ recipe.forked_from.id }}">{{ recipe.forked_from.title }}</a>
-</p>
-{% endif %}
+  <div style="height: 10px;"></div>
+  <p class="text text-sm font-robo color-gray">
+    {{ recipe.description }}
+  </p>
 
-<div style="height: 20px;"></div>
-<p class="text text-sm font-robo color-white">
-  {{ recipe.description }}
-</p>
+  {% if materials %}
+  <div style="height: 20px;"></div>
+  <p class="text text-md font-robo color-black">Materials:</p>
+  {% for material in materials %}
+  <p class="text text-sm font-robo color-gray">
+    {% if material.quantity %}{{ material.quantity }} {% endif %}
+    {{ material.name }}
+  </p>
+  {% endfor %}
+  {% endif %}
 
-{% if materials %}
-<div style="height: 20px;"></div>
-<p class="text text-md font-robo color-white">Materials:</p>
-{% for material in materials %}
-<p class="text text-sm font-robo color-white">
-  {% if material.quantity %}{{ material.quantity }} {% endif %}
-  {{ material.name }}
-</p>
-{% endfor %}
-{% endif %}
+  {% if ingredients %}
+  <div style="height: 10px;"></div>
+  <p class="text text-md font-robo color-black">Ingredients:</p>
+  {% for ingredient in ingredients %}
+  <p class="text text-sm font-robo color-gray">
+    {% if ingredient.quantity %}{{ ingredient.quantity }} {% endif %}
+    {% if ingredient.type %}{{ ingredient.type }} {% endif %}
+    {{ ingredient.name }}
+  </p>
+  {% endfor %}
+  {% endif %}
 
-{% if ingredients %}
-<div style="height: 20px;"></div>
-<p class="text text-md font-robo color-white">Ingredients:</p>
-{% for ingredient in ingredients %}
-<p class="text text-sm font-robo color-white">
-  {% if ingredient.quantity %}{{ ingredient.quantity }} {% endif %}
-  {% if ingredient.type %}{{ ingredient.type }} {% endif %}
-  {{ ingredient.name }}
-</p>
-{% endfor %}
-{% endif %}
+  {% if steps %}
+  <div style="height: 10px;"></div>
+  <p class="text text-md font-robo color-black">Steps:</p>
+  {% for step in steps %}
+  <p class="text text-sm font-robo color-gray">
+    {{ step.description }}
+  </p>
+  <div style="height: 5px;"></div>
+  {% endfor %}
+  {% endif %}
 
-{% if steps %}
-<div style="height: 20px;"></div>
-<p class="text text-md font-robo color-white">Steps:</p>
-{% for step in steps %}
-<p class="text text-sm font-robo color-white">
-  {{ step.description }}
-</p>
-{% endfor %}
-{% endif %}
-
-<div style="height: 20px;"></div>
-<p class="text text-sm font-robo color-white">
-  <a class="text-underline color-white" href="">Fork me</a>
-</p>
+  <div style="height: 10px;"></div>
+  <p class="text text-sm font-robo color-gray">
+    <a class="text-underline color-gray" href="">Fork me</a>
+  </p>
+</div>
 
 {% endblock %}

@@ -5,13 +5,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link id="css_reset" href="{% static "styles/reset.css" %}" rel="stylesheet" type="text/css" />
   <link id="css_core" href="{% static "styles/core.css" %}" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
   <title>Chefhat{% block title %}{% endblock %}</title>
 </head>
 
 <body>
   <div class="wrapper">
+    <header>
+     <img src="{% static "images/chefhat.png" %}" height="70px" width="70px">
+    </header>
     <div class="content">
       {% block body %}
       {% endblock %}

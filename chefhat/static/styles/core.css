@@ -6,11 +6,34 @@ body {
   background-color: #487c8e;
 }
 
+/* mobile devices */
 @media screen {
   .wrapper {
-    margin: 0 auto;
+    margin: 10px auto 10px auto;
     height: 100%;
     width: 100%;
+  
+    display: grid;
+  }
+}
+
+/* less than half tab */
+@media screen and (min-width: 480px) {
+  .wrapper {
+    margin: 10px auto 10px auto;
+    height: 100%;
+    width: 100%;
+  
+    display: grid;
+  }
+}
+
+/* greater than half tab */
+@media screen and (min-width: 720px) {
+  .wrapper {
+    margin: 10px auto 10px auto;
+    height: 100%;
+    width: 720px;
   
     display: grid;
   }
@@ -19,8 +42,14 @@ body {
 .content {
   text-align: center;
 }
+.color-black {
+  color: #121212;
+}
 .color-blue {
   color: #487c8e;
+}
+.color-gray {
+  color: #595959;
 }
 .color-white {
   color: #eaeaea;
@@ -34,23 +63,23 @@ body {
   font-weight: normal;
   margin: 0;
   padding: 0;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
 }
 .text-sm {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 18px;
 }
 .text-md {
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 16px;
+  line-height: 24px;
 }
 .text-lg {
-  font-size: 48px;
-  line-height: 60px;
+  font-size: 22px;
+  line-height: 33px;
 }
 .font-robo {
-  font-family: 'Roboto Slab';
+  font-family: 'IBM Plex Sans';
 }
 .text-underline {
   text-decoration: underline;
@@ -64,4 +93,19 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.recipe-card {
+  background-color: #fafafa;
+  border: 2px solid #d3d073;
+  padding: 20px;
+
+  height: auto;
+  width: 100% - 40px;
+}
+
+header {
+  background-color: #487c8e;
+  height: 70px;
+  margin-bottom: 10px;
 }
