@@ -7,6 +7,8 @@
     {{ recipe.title }}
   </p>
 
+  <a href="/recipes/edit/{{ recipe.id }}">edit</a>
+
   {% if recipe.forked_from %}
   <div style="height: 10px;"></div>
   <p class="text text-sm font-robo color-gray">
