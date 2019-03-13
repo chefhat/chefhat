@@ -10,8 +10,7 @@ def index(request):
 
 def show(request, id):
     recipe = get_object_or_404(Recipe, id=id)
-    return render(request, 'recipes/show.html',
-                  {'recipe': recipe, 'materials': recipe.materials.all(), 'ingredients': recipe.ingredients.all(), 'steps': recipe.steps.all()})
+    return render(request, 'recipes/show.html', {'recipe': recipe})
 
 
 def new(request):

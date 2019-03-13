@@ -17,42 +17,23 @@
 
   <div style="height: 10px;"></div>
   <p class="text text-sm font-robo color-gray">
-    {{ recipe.description }}
+    {{ recipe.steps }}
   </p>
 
-  {% if materials %}
-  <div style="height: 20px;"></div>
-  <p class="text text-md font-robo color-black">Materials:</p>
-  {% for material in materials %}
-  <p class="text text-sm font-robo color-gray">
-    {% if material.quantity %}{{ material.quantity }} {% endif %}
-    {{ material.name }}
-  </p>
-  {% endfor %}
-  {% endif %}
-
-  {% if ingredients %}
   <div style="height: 10px;"></div>
-  <p class="text text-md font-robo color-black">Ingredients:</p>
-  {% for ingredient in ingredients %}
   <p class="text text-sm font-robo color-gray">
-    {% if ingredient.quantity %}{{ ingredient.quantity }} {% endif %}
-    {% if ingredient.type %}{{ ingredient.type }} {% endif %}
-    {{ ingredient.name }}
+    {{ recipe.equipment }}
   </p>
-  {% endfor %}
-  {% endif %}
 
-  {% if steps %}
   <div style="height: 10px;"></div>
-  <p class="text text-md font-robo color-black">Steps:</p>
-  {% for step in steps %}
   <p class="text text-sm font-robo color-gray">
-    {{ step.description }}
+    {{ recipe.ingredients }}
   </p>
-  <div style="height: 5px;"></div>
-  {% endfor %}
-  {% endif %}
+
+  <div style="height: 10px;"></div>
+  <p class="text text-sm font-robo color-gray">
+    {{ recipe.notes }}
+  </p>
 
   <div style="height: 10px;"></div>
   <p class="text text-sm font-robo color-gray">
