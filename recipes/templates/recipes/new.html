@@ -1,0 +1,12 @@
+{% extends 'core.html' %}
+{% block title %} - Create a new recipe{% endblock %}
+
+{% block body %}
+
+<form action="/recipes/new/" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
