@@ -1,9 +1,8 @@
-venv
 *.pyc
-staticfiles
-.env
 *.sqlite3
-local_settings.py
+.env
 .vscode
-Pipfile.lock
+local_settings.py
 requirements.txt
+staticfiles
+venv
