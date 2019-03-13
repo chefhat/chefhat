@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -25,6 +25,20 @@ def new(request):
         form = RecipeForm()
 
     return render(request, 'recipes/new.html', {'form': form})
+
+
+def fork(request, id):
+    if request.method == 'POST':
+        forked_from = get_object_or_404(Recipe, id=id)
+        # need to get object twice because we must modify it to clone it
+        recipe = get_object_or_404(Recipe, id=id)
+        recipe.pk = None
+        recipe.forked_from = forked_from
+        recipe.title = "Fork of " + forked_from.title
+        recipe.save()
+        return HttpResponseRedirect('/recipes/' + str(recipe.id))
+    else:
+        raise Http404
 
 
 def edit(request, id):

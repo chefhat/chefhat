@@ -36,9 +36,10 @@
   </p>
 
   <div style="height: 10px;"></div>
-  <p class="text text-sm font-robo color-gray">
-    <a class="text-underline color-gray" href="">Fork me</a>
-  </p>
+  <form action="/recipes/fork/{{ recipe.id }}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Fork me">
+  </form>
 </div>
 
 {% endblock %}
