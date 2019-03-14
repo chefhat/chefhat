@@ -3,10 +3,15 @@
 
 {% block body %}
 
-<form action="/recipes/edit/{{ recipe_id }}" method="post">
-  {% csrf_token %}
-  {{ form }}
-  <input type="submit" value="Submit">
-</form>
+<div class="recipe-card">
+  <div class="recipe-form text left text-md font-robo color-gray">
+    <form action="/recipes/edit/{{ recipe_id }}" method="post">
+      {% csrf_token %}
+      {{ form }}
+      <div class="spacing-md"></div>
+      <input class="submit-button center text-md" type="submit" value="Finish editing recipe">
+    </form>
+  </div>
+</div>
 
 {% endblock %}

@@ -137,6 +137,29 @@ img {
   text-decoration: underline;
 }
 
+.recipe-form label {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 6px;
+}
+
+.recipe-form input {
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
+
+.recipe-form textarea {
+  width: 100%;
+}
+
+.submit-button {
+  background-color: #fafafa;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 header {
   background-color: #487c8e;
   height: 70px;
