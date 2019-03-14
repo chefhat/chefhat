@@ -40,7 +40,7 @@
   <div style="height: 10px;"></div>
   <form action="/recipes/fork/{{ recipe.id }}" method="post">
     {% csrf_token %}
-    <input type="submit" value="Fork me">
+    <input class="fork-button center text-sm font-robo" type="submit" value="Fork this recipe">
   </form>
 </div>
 
