@@ -1,12 +1,17 @@
 {% extends 'core.html' %}
-{% block title %} - Create a new recipe{% endblock %}
+{% block title %} - Edit recipe{% endblock %}
 
 {% block body %}
 
-<form action="/recipes/new/" method="post">
-  {% csrf_token %}
-  {{ form }}
-  <input type="submit" value="Submit">
-</form>
+<div class="recipe-card">
+  <div class="recipe-form text left text-md font-robo color-gray">
+    <form action="/recipes/new/" method="post">
+      {% csrf_token %}
+      {{ form }}
+      <div class="spacing-md"></div>
+      <input class="submit-button center text-md" type="submit" value="Create recipe">
+    </form>
+  </div>
+</div>
 
 {% endblock %}
