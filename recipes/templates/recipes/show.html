@@ -2,10 +2,9 @@
 {% block title %} - {{ recipe.title }}{% endblock %}
 
 {% block body %}
+
 <div class="recipe-card">
-  <p class="text text-lg font-robo color-black">
-    {{ recipe.title }}
-  </p>
+  <p class="text center text-lg font-robo color-black">{{ recipe.title }}</p>
 
   <a href="/recipes/edit/{{ recipe.id }}">edit</a>
 
