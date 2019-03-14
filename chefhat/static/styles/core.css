@@ -87,6 +87,15 @@ body {
   font-size: 22px;
   line-height: 33px;
 }
+.spacing-sm {
+  height: 6px;
+}
+.spacing-md {
+  height: 10px;
+}
+.spacing-lg {
+  height: 18px;
+}
 .font-robo {
   font-family: 'IBM Plex Sans';
 }

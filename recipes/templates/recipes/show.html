@@ -10,34 +10,40 @@
   <a href="/recipes/edit/{{ recipe.id }}">edit</a>
 
   {% if recipe.forked_from %}
-  <div style="height: 10px;"></div>
+  <div class="spacing-md"></div>
   <p class="text text-sm font-robo color-gray">
     forked from
     <a class="text-underline color-gray" href="/recipes/{{ recipe.forked_from.id }}">{{ recipe.forked_from.title }}</a>
   </p>
   {% endif %}
 
-  <div style="height: 10px;"></div>
-  <p class="text text-sm font-robo color-gray">
-    {{ recipe.steps }}
-  </p>
+  <div class="spacing-md"></div>
+  <p class="text left text-md font-robo color-gray">Steps</p>
+  <div class="spacing-sm"></div>
+  <p class="text left text-sm font-robo color-gray">{{ recipe.steps }}</p>
 
-  <div style="height: 10px;"></div>
-  <p class="text text-sm font-robo color-gray">
-    {{ recipe.equipment }}
-  </p>
+  {% if recipe.equipment %}
+  <div class="spacing-md"></div>
+  <p class="text left text-md font-robo color-gray">Equipment</p>
+  <div class="spacing-sm"></div>
+  <p class="text left text-sm font-robo color-gray">{{ recipe.equipment }}</p>
+  {% endif %}
 
-  <div style="height: 10px;"></div>
-  <p class="text text-sm font-robo color-gray">
-    {{ recipe.ingredients }}
-  </p>
+  {% if recipe.ingredients %}
+  <div class="spacing-md"></div>
+  <p class="text left text-md font-robo color-gray">Ingredients</p>
+  <div class="spacing-sm"></div>
+  <p class="text left text-sm font-robo color-gray">{{ recipe.ingredients }}</p>
+  {% endif %}
 
-  <div style="height: 10px;"></div>
-  <p class="text text-sm font-robo color-gray">
-    {{ recipe.notes }}
-  </p>
+  {% if recipe.notes %}
+  <div class="spacing-md"></div>
+  <p class="text left text-md font-robo color-gray">Notes</p>
+  <div class="spacing-sm"></div>
+  <p class="text left text-sm font-robo color-gray">{{ recipe.notes }}</p>
+  {% endif %}
 
-  <div style="height: 10px;"></div>
+  <div class="spacing-md"></div>
   <form action="/recipes/fork/{{ recipe.id }}" method="post">
     {% csrf_token %}
     <input class="fork-button center text-sm font-robo" type="submit" value="Fork this recipe">
