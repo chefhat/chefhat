@@ -13,8 +13,6 @@
   </p>
   {% endif %}
 
-  <a href="/recipes/edit/{{ recipe.id }}">edit</a>
-
   <div class="spacing-md"></div>
   <p class="text left text-md font-robo color-gray">Steps</p>
   <div class="spacing-sm"></div>
@@ -46,6 +44,10 @@
     {% csrf_token %}
     <input class="fork-button center text-sm font-robo" type="submit" value="Fork this recipe">
   </form>
+
+  <p class="text center text-sm font-robo color-gray">
+    <a class="text-underline color-gray" href="/recipes/edit/{{ recipe.id }}">Edit this recipe</a>
+  </p>
 </div>
 
 {% endblock %}
