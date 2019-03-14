@@ -6,15 +6,14 @@
 <div class="recipe-card">
   <p class="text center text-lg font-robo color-black">{{ recipe.title }}</p>
 
-  <a href="/recipes/edit/{{ recipe.id }}">edit</a>
-
   {% if recipe.forked_from %}
-  <div class="spacing-md"></div>
-  <p class="text text-sm font-robo color-gray">
+  <p class="text center text-sm font-robo color-gray">
     forked from
     <a class="text-underline color-gray" href="/recipes/{{ recipe.forked_from.id }}">{{ recipe.forked_from.title }}</a>
   </p>
   {% endif %}
+
+  <a href="/recipes/edit/{{ recipe.id }}">edit</a>
 
   <div class="spacing-md"></div>
   <p class="text left text-md font-robo color-gray">Steps</p>
