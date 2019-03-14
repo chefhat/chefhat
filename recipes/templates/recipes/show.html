@@ -16,27 +16,27 @@
   <div class="spacing-md"></div>
   <p class="text left text-md font-robo color-gray">Steps</p>
   <div class="spacing-sm"></div>
-  <p class="text left text-sm font-robo color-gray">{{ recipe.steps }}</p>
+  <div class="text left text-sm font-robo color-gray">{{ recipe.steps|linebreaks }}</div>
 
   {% if recipe.equipment %}
   <div class="spacing-md"></div>
   <p class="text left text-md font-robo color-gray">Equipment</p>
   <div class="spacing-sm"></div>
-  <p class="text left text-sm font-robo color-gray">{{ recipe.equipment }}</p>
+  <div class="text left text-sm font-robo color-gray">{{ recipe.equipment|linebreaks }}</div>
   {% endif %}
 
   {% if recipe.ingredients %}
   <div class="spacing-md"></div>
   <p class="text left text-md font-robo color-gray">Ingredients</p>
   <div class="spacing-sm"></div>
-  <p class="text left text-sm font-robo color-gray">{{ recipe.ingredients }}</p>
+  <div class="text left text-sm font-robo color-gray">{{ recipe.ingredients|linebreaks }}</div>
   {% endif %}
 
   {% if recipe.notes %}
   <div class="spacing-md"></div>
   <p class="text left text-md font-robo color-gray">Notes</p>
   <div class="spacing-sm"></div>
-  <p class="text left text-sm font-robo color-gray">{{ recipe.notes }}</p>
+  <div class="text left text-sm font-robo color-gray">{{ recipe.notes|linebreaks }}</div>
   {% endif %}
 
   <div class="spacing-md"></div>
