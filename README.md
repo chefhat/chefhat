@@ -3,8 +3,8 @@
 
 ## SSH KEY REGISTRATION
 #### Preconditions:
-1. You have a GitHub account.
-2. You have a Heroku account.
+1. You have a [GitHub](https://github.com/) account.
+2. You have a [Heroku](https://www.heroku.com/) account.
 #### Steps:
 1. Go to your home directory and generate a new key.
 ```sh
@@ -65,7 +65,7 @@ $ sudo tar -czvf ssh.tar.gz .ssh
 
 ## GPG COMMIT SIGNING
 #### Preconditions:
-1. You have a GitHub account.
+1. You have a [GitHub](https://github.com/) account.
 #### Steps:
 1. Go to your home directory and generate a new key.
 ```sh
@@ -115,10 +115,10 @@ $ sudo tar -czvf gnupg.tar.gz .gnupg
 
 ## INSTALLATION
 #### Preconditions:
-1. You have a GitHub account.
-2. Your GitHub account has an SSH key registered.
+1. You have a [GitHub](https://github.com/) account.
+2. Your [GitHub](https://github.com/) account has an SSH key registered.
 3. You've forked the chefhat repository.
-4. You've an understanding of basic Bash & Git commands.
+4. You've an understanding of basic [Bash](https://www.gnu.org/software/bash/manual/bash.html) & [Git](https://git-scm.com/docs) commands.
 #### Steps:
 1. Install necessary packages.
 ```sh
@@ -137,9 +137,10 @@ $ sudo pip freeze > requirements.txt
 $ sudo pip uninstall -r requirements.txt
 $ sudo rm -rf requirements.txt
 ```
-4. Install global pip packages.
+4. Update pip and install global pip packages.
   - If you don't want autocomplete/linting support in vscode you don't have to follow the tagged command. It's just easier to get it out of the way now.
 ```sh
+$ sudo pip install --upgrade pip
 $ sudo pip install autopep8 pylint //for vscode autocomplete/linting
 $ sudo pip install pipenv
 ```
@@ -158,44 +159,44 @@ $ cd chefhat
 $ git remote add upstream git://github.com/chefhat/chefhat.git
 $ git pull upstream stag
 ```
-8. Ensure no pipenv exists at chefhat repository and create a new pipenv, installing all required pip packages.
-  - If you don't want autocomplete/linting support in vscode you don't have to follow the tagged command. 
+8. Ensure no pipenv exists at chefhat repository and create a new pipenv.
 ```sh
 $ pipenv --rm
 $ pipenv --python 3.7
-$ pipenv install
-$ pipenv install --dev //for vscode autocomplete/linting
 ```
 9. Enter pipenv.
 ```sh
 $ pipenv shell
 ```
-10. At this point you must fetch ```local_settings.py``` from Discord and put it in the chefhat/chefhat directory such that it resides in the same directory as settings.py.
-11. Now you initial the database.
+10. Install all required pip packages.
+  - If you don't want autocomplete/linting support in vscode you don't have to follow the tagged command. 
+```sh
+$ pipenv install
+$ pipenv install --dev //for vscode autocomplete/linting
+```
+11. At this point you must fetch ```local_settings.py``` from Discord and put it in the chefhat/chefhat directory such that it resides in the same directory as settings.py.
+12. Now you initial the database.
 ```sh
 $ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py createsuperuser
 ```
-12. Now start the server. If you run into any errors by this point let someone know; if not, you're done setting up!
+13. Now start the server. If you run into any errors by this point let someone know; if not, you're done setting up!
+  - You can access your server by going to ```localhost:8000```.
 ```sh
 $ python manage.py runserver
 ```
-* You can access your server by going to localhost:8000 or 127.0.0.1:8000
-
-13. While inside your server, you can run Python commands by executing the following in terminal. It will start a Python shell inside the VM.
+14. While inside your server, you can run Python commands by executing the following in terminal. It will start a Python shell inside the VM.
 ```sh
 $ python manage.py shell
 ```
-
-14. End the server and then leave the pipenv.
+15. End the server and then leave the pipenv.
 ```sh
 $ ^c
 $ exit
 ```
 
-## MAKING FURTHER CHANGES
-### Local Changes
+## MAKING CHANGES
 #### Preconditions:
 1. You followed the installation process described as above and ran into zero, or resolved all, errors associated with that process.
 #### Steps:
@@ -218,45 +219,38 @@ $ python manage.py migrate
 ```
 5. At this point you can be sure you're running the latest build of chefhat/chefhat/stag and can safely work to extend it.
 
-### Devleoping with Heroku CLI
+## DEVELOPING WITH THE HEROKU CLI
 #### Preconditions:
-1. You have a Heroku account.
-2. You have install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
-
+1. You have a [Heroku](https://www.heroku.com/) account.
+2. You have installed the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
 #### Steps:
-
-1. After installing the Heroku CLI, you can log in by executing
+After installing the Heroku CLI, you can log in by executing:
 ```sh
-$ heroku login      //this will open your web browser
-$ heroku login -i   //this will allow you to enter credentials through the CLI
+$ heroku login      //opens your web browser
+$ heroku login -i   //allows you to enter credentials through the CLI
 ```
-
 You can execute commands on the Chefhat app using the Heroku CLI, for example:
-
 ```sh
 $ heroku run bash -a chefhat-stag
 ```
-This starts a bash terminal that controls the chefhat-stag Heroku server. You must use the ```-a``` flag to specify which app you want to execute the command on.
+  - This starts a bash terminal that controls the chefhat-stag Heroku server. You must use the ```-a``` flag to specify which app you want to execute the command on.
 
 ## COMMITTING CHANGES
-
 #### Preconditions:
 1. You have forked the Chefhat repository.
 2. You have GPG and SSH key verification set up.
 3. You are developing in the ```stag``` repo.
-
 #### Steps:
-
 1. Before you begin developing in staging, ensure your working directory is up to date.
 ```sh
 $ git pull upstream stag
 ```
-* If you have uncommitted changes, run a ```git stash``` to stash them and then do a pull. Once your directory is up to date, unstash your changes and commit them.
+  - If you have uncommitted changes, run a ```git stash``` to stash them and then do a pull. Once your directory is up to date, unstash your changes and commit them.
 2. Once you have made changes, add them to be committed to your forked repo.
  ```sh 
  $ git add [filename]
  ```
-3. Once your files areadded, you can commit them with a message.
+3. Once your files are added, you can commit them with a message.
 ```sh
 $ git commit -m "Your message here."
 ```
@@ -266,7 +260,5 @@ $ git commit -m "Your message here."
 $ git push
 ```
 5. Navigate to https://github.com/[your_username]/chefhat/ and switch to the ```stag``` branch. Next to the branch dropdown there is a button labeled "New pull request." Clicking on that brings you to a new screen where you merge the head repository (your fork) with the base repository (chefhat staging). Compare your changes, and click the green "Create pull request" button.
-
 6. From here, your pull request will be created, and you can either merge it now or add reviewers so others can examine your work.
-
 7. Once your pull request is merged, Heroku will automatically execute a new build and update the [Chefhat-stag server](https://chefhat-stag.herokuapp.com/admin/)
