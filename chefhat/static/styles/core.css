@@ -12,7 +12,7 @@ body {
     margin: 10px auto 10px auto;
     height: 100%;
     width: 100%;
-  
+
     display: grid;
   }
 }
@@ -23,7 +23,7 @@ body {
     margin: 10px auto 10px auto;
     height: 100%;
     width: 100%;
-  
+
     display: grid;
   }
 }
@@ -34,7 +34,7 @@ body {
     margin: 10px auto 10px auto;
     height: 100%;
     width: 720px;
-  
+
     display: grid;
   }
 }
@@ -66,6 +66,23 @@ body {
   text-align: left;
   text-decoration: none;
 }
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.title {
+  display: block;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+}
 .text-sm {
   font-size: 12px;
   line-height: 18px;
@@ -77,6 +94,15 @@ body {
 .text-lg {
   font-size: 22px;
   line-height: 33px;
+}
+.spacing-sm {
+  height: 6px;
+}
+.spacing-md {
+  height: 10px;
+}
+.spacing-lg {
+  height: 18px;
 }
 .font-robo {
   font-family: 'IBM Plex Sans';
@@ -102,6 +128,36 @@ img {
 
   height: auto;
   width: 100% - 40px;
+}
+
+.fork-button {
+  background-color: #fafafa;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.recipe-form label {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 6px;
+}
+
+.recipe-form input {
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
+
+.recipe-form textarea {
+  width: 100%;
+}
+
+.submit-button {
+  background-color: #fafafa;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 header {
